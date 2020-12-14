@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+
+    <script>
+        
+        function Cars(list){
+            return React.createElement(
+                'h2',
+                null,
+                'Car Brands : ',
+                list.brand
+            );
+        }
+
+        function Output(){
+            return React.createElement(
+                'div',
+                null,
+                React.createElement(Cars, {brand: 'Toyota'}),
+                React.createElement(Cars, {brand: 'Mazda'}),
+                React.createElement(Cars, {brand: 'Hyundai'}),
+            );
+        }
+
+        ReactDOM.render(React.createElement(Output, null), document.getElementById('container'));
+        
+    </script>
+    
+</body>
+</html>

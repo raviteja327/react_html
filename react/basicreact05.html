@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>10 + 5 = 1</p>
+
+    <div id="container"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+
+    <script>
+
+        function Correct(sum){
+            return React.createElement(
+                'h1',
+                null,
+                'It is correct'
+            );
+        }
+
+        function Wrong(sum){
+            return React.createElement(
+                'h1',
+                null,
+                'It is wrong'
+            );
+        }
+
+        function Result(sum){
+            var addition = sum.addition;
+            if(addition){
+                return React.createElement(Correct, null);
+            }
+            else{
+                return React.createElement(Wrong, null);
+            }
+        }
+
+        ReactDOM.render(
+            React.createElement(Result, {addition: false}), document.getElementById('container')
+        );
+        
+    </script>
+    
+</body>
+</html>

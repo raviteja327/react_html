@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+
+    <script>
+
+        var letters = ['A', 'B', 'C', 'D'];
+
+        var lets = letters.map(function(letters){
+            return React.createElement(
+                'li',
+                null,
+                letters
+            );
+        });
+
+        ReactDOM.render(React.createElement(
+            'ol',
+            null,
+            lets
+        ), document.getElementById('container'));
+        
+    </script>
+    
+</body>
+</html>
